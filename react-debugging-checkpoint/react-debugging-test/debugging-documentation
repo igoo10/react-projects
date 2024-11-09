@@ -1,0 +1,23 @@
+This document explains how I debugged the Movie App I built for my React Hook checkpoint using React Developer Tools.
+
+Debugging Steps
+1. Finding the Issue:
+
+I noticed that some movie data wasn’t displaying correctly in the MovieCard component. The console showed a warning that the movie prop was missing.
+Inspecting with React Developer Tools:
+
+I opened React Developer Tools and looked at the Components panel.
+After clicking on MovieCard, I saw that the movie prop was undefined, which was likely causing the missing data issue.
+2. Fixing the Issue:
+
+I went to App.js to check where MovieCard was rendered and realized I hadn’t passed the movie prop when mapping through movies.
+I updated the code to pass the movie prop to MovieCard.
+Fixed Code:
+
+{movies.map((movie, index) => (
+  <MovieCard key={index} movie={movie} />
+))}
+3. Confirming the Fix:
+
+After the change, I rechecked the app in React DevTools and saw that the movie prop was now correctly passed.
+I tested the app to ensure movies were displaying as expected and that filtering worked correctly.
